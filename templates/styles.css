@@ -1,0 +1,143 @@
+/* Amy Styles for Outstanding Issues Mockup *********** */
+
+table {
+  /* removes space between columns creating continuous row*/
+  border-collapse: collapse;
+
+  /* from Container class but no set width and 10rem for max-width. Allows the table to spread wide on the page */
+  max-width: calc(100vw - 10rem);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  /* Set this width to 100% so column widths can be reduce relative to the entire table */
+  width: 100%;
+}
+
+table,
+th,
+td {
+  background-color: #f7f7f7;
+}
+
+th,
+td {
+  box-shadow: rgba (0, 0, 0, 0.04) 2px 2px 2px 0px;
+
+  /* the next two lines put space between rows so table looks like pipeline UI*/
+  border-bottom: 15px solid transparent;
+  background-clip: padding-box;
+}
+
+th {
+  padding: 15px 15px 5px 15px;
+  background-color: white;
+  /* vertical-align: baseline; */
+  text-align: center;
+}
+
+td {
+  padding: 15px;
+  font-size: 1.25rem;
+  background-color: white;
+  text-align: center;
+}
+
+colgroup {
+  width: 100%;
+}
+
+.wrap {
+  word-wrap: break-word;
+}
+
+.td-align-left {
+  text-align: left;
+}
+
+.table-no-border {
+  border: none;
+}
+
+.dataset-name {
+  font-size: 1.5rem;
+}
+
+.pipeline-header {
+  display: none;
+  visibility: hidden;
+}
+/* End of Amy Styles for Customer Visibility Mockup *********/
+
+/* Amy Styles for Outstanding Issues Mockup *********** */
+
+table {
+  /* removes space between columns creating continuous row*/
+  border-collapse: collapse;
+
+  /* from Container class but no set width and 10rem for max-width. Allows the table to spread wide on the page */
+  max-width: calc(100vw - 10rem);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  /* Set this width to 100% so column widths can be reduce relative to the entire table */
+  width: 100%;
+}
+
+table,
+th,
+td {
+  background-color: #f7f7f7;
+}
+
+th,
+td {
+  box-shadow: rgba (0, 0, 0, 0.04) 2px 2px 2px 0px;
+
+  /* the next two lines put space between rows so table looks like pipeline UI*/
+  border-bottom: 15px solid transparent;
+  background-clip: padding-box;
+}
+
+th {
+  padding: 15px 15px 5px 15px;
+  background-color: white;
+  /* vertical-align: baseline; */
+  text-align: center;
+}
+
+td {
+  padding: 15px;
+  font-size: 1.25rem;
+  background-color: white;
+  text-align: center;
+}
+
+colgroup {
+  width: 100%;
+}
+
+.wrap {
+  word-wrap: break-word;
+}
+
+.td-align-left {
+  text-align: left;
+}
+
+.table-no-border {
+  border: none;
+}
+
+.dataset-name {
+  font-size: 1.5rem;
+}
+
+.pipeline-header {
+  display: none;
+  visibility: hidden;
+}
+/* End of Amy Styles for Customer Visibility Mockup *********/
