@@ -4761,6 +4761,22 @@ p {
 }
 
 /* ********* Amy Styles for Load History Mockup *********** */
+
+.header-search-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-search {
+  width: 100%;
+}
+
+.SearchFilter {
+  width: 100%;
+}
+
 /* Table-navButtons and nav-button applied with Button and button classes */
 .Table-navButtons {
   max-width: calc(100vw - 10rem);
