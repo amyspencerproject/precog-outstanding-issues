@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outstanding Issues Mock-Up</title>
+    <link rel="stylesheet" type="text.css" href="./scss/normalize.css" />
+    <link rel="stylesheet" href="./scss/main.css" />
+    <link rel="stylesheet" href="./scss/fonts.css" />
+    <link rel="stylesheet" href="./scss/fontawesome-all.css" />
+    <link rel="stylesheet" href="./scss/google.css" />
+  </head>
+  <body>
+    <style>
+      table {
+        user-select: none; /* Standard syntax */
+      }
+    </style>
+    <script>
+      let row;
+      function start() {
+        row = event.target;
+      }
+      function dragover() {
+        let e = event;
+        e.preventDefault();
+
+        let children = Array.from(e.target.parentNode.children);
+        if (children.indexOf(e.target.parentNode) > children.indexOf(row))
+          e.target.parentNode.after(row);
+        else e.target.parentNode.before(row);
+      }
+    </script>
+
+    <div class="Header">
+      <div class="Logo">
+        <img class="Logo-img" src="img/precog-logo.png" />
+      </div>
+      <div class="ButtonGroup">
+        <a class="Button button" href="information.html"
+          ><i class="Icon fas fa-info-circle"></i>Information</a
+        >
+        <a class="Button button" href="#"
+          ><i class="Icon fas fa-table"></i>Load History</a
+        >
+        <button class="Button">
+          <i class="Icon fas fa-user-circle"></i>My subscription</button
+        ><button class="Button">
+          <i class="Icon fas fa-sign-out-alt"></i>Log out
+        </button>
+      </div>
+    </div>
+    <div class="Page">
+      <div class="Container">
+        <h1>Info to include</h1>
+        <p>
+          would be nice if we could show the outstanding issues to the customer
+          in the ui and let them prioritise them and see estimates
+        </p>
+
+        <table id="drag-drop-table">
+          <!-- Deleted all the column jazz at the top -->
+          <tr class="">
+            <th class="">Reported</th>
+            <th class="">Last Update</th>
+            <th class="">Priority</th>
+            <th class="">Description</th>
+            <th class="">Status</th>
+            <th class="">Estimated time of resolution</th>
+          </tr>
+          <tr
+            class=""
+            draggable="true"
+            ondragstart="start()"
+            ondragover="dragover()"
+          >
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+          </tr>
+          <tr
+            class=""
+            draggable="true"
+            ondragstart="start()"
+            ondragover="dragover()"
+          >
+            <td>I</td>
+            <td>J</td>
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+            <td>N</td>
+          </tr>
+          <tr
+            class=""
+            draggable="true"
+            ondragstart="start()"
+            ondragover="dragover()"
+          >
+            <td>Q</td>
+            <td>R</td>
+            <td>S</td>
+            <td>T</td>
+            <td>U</td>
+            <td>V</td>
+          </tr>
+          <tr
+            class=""
+            draggable="true"
+            ondragstart="start()"
+            ondragover="dragover()"
+          >
+            <td>G</td>
+            <td>H</td>
+            <td>O</td>
+            <td>P</td>
+            <td>X</td>
+            <td>Y</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

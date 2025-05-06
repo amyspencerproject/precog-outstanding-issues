@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="./scss/google.css" />
   </head>
   <body>
+    <style>
+      table {
+        user-select: none; /* Standard syntax */
+      }
+    </style>
+    <script>
+      let row;
+      function start() {
+        row = event.target;
+      }
+      function dragover() {
+        let e = event;
+        e.preventDefault();
+
+        let children = Array.from(e.target.parentNode.children);
+        if (children.indexOf(e.target.parentNode) > children.indexOf(row))
+          e.target.parentNode.after(row);
+        else e.target.parentNode.before(row);
+      }
+    </script>
     <div class="Header">
       <div class="Logo">
         <a href="index.html">
@@ -40,140 +60,183 @@
       </div>
     </div>
     <div class="Page">
-      <div class="">
-        <div class="Container">
-          <h1 class="header-search">Outstanding Issues</h1>
-        </div>
-
-        <table class="">
-          <colgroup style="width: 100%" class="">
-            <col class="" />
-            <col class="" />
-            <col class="" />
-            <col class="" />
-            <col class="" />
-            <col class="" />
-          </colgroup>
-          <tr class="">
-            <th class="">Priority</th>
-            <th class="">Reported</th>
-            <th class="">Updated</th>
-            <th class="">Description</th>
-            <th class="">Status</th>
-            <th class="">Estimated time of resolution</th>
-          </tr>
-          <tr class="">
-            <td class="">1</td>
-            <td class="">Feb 10, 6:00</td>
-            <td class="">Feb 11, 6:50</td>
-            <td class="">
-              long running load for datasets including
-              "template/tax_accumulationSet/tax_accumulationSet" in connector
-              "SAP SuccessFactors Payroll" and pipeline "OGE_SF_PROD"
-            </td>
-            <td class="">Ongoing</td>
-            <td class="">Feb 18</td>
-          </tr>
-          <tr class="">
-            <td class="">2</td>
-            <td class="">Apr 30, 8:04</td>
-            <td class="">May 01, 1:12</td>
-            <td class="">
-              dataset requires processing for datasets including
-              "Payroll_ResultsSet" in connector "SAP SuccessFactors Payroll" and
-              pipeline "OGE_SF_PROD_AZURE"
-            </td>
-            <td class="">Ongoing</td>
-            <td class="">May 08</td>
-          </tr>
-          <tr class="">
-            <td class="">3</td>
-            <td class="">May 01, 3:05</td>
-            <td class="">May 01, 3:39</td>
-            <td class="">
-              dataset requires processing for datasets including
-              "BusinessPartnerCollection" in connector "SAP Cloud For Customer"
-              and pipeline "OGE_C4C_PROD_AZURE"
-            </td>
-            <td class="">Waiting on Customer</td>
-            <td class="">Up to you customer</td>
-          </tr>
-          <tr class="">
-            <td class="">4</td>
-            <td class="">Feb 12, 7:01</td>
-            <td class="">Feb 12, 7:35</td>
-            <td class="">
-              action required for datasets including "Shift" in connector
-              "WorkForce" and pipeline "OGE_WFS_PROD"
-            </td>
-            <td class="">Resolved</td>
-            <td class="">Feb 12, resolved</td>
-          </tr>
-          <tr class="">
-            <td class="">5</td>
-            <td class="">May 02, 2:20</td>
-            <td class="">May 02, 2:20</td>
-            <td class="">
-              dataset requires processing for datasets including "Appointment"
-              in connector "Bullhorn" and pipeline "Recruitment"
-            </td>
-            <td class="">Ongoing</td>
-            <td class="">May 09</td>
-          </tr>
-          <tr class="">
-            <td class="">6</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">
-              action required Your SAP Fieldglass password has expired. Please
-              correct the value entered in the source configuration and try
-              again. for datasets including "Work Order Edit History" in
-              connector "SAP Fieldglass" and pipeline "Spend_Analysis_POC"
-            </td>
-            <td class="">Waiting on Customer</td>
-            <td class="">May 08</td>
-          </tr>
-          <tr class="">
-            <td class="">7</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">
-              action required Your SAP Fieldglass password has expired. Please
-              correct the value entered in the source configuration and try
-              again. for datasets including "Work Order Revision" in connector
-              "SAP Fieldglass" and pipeline "Spend_Analysis_POC"
-            </td>
-            <td class="">Waiting on Customer</td>
-            <td class="">May 08</td>
-          </tr>
-          <tr class="">
-            <td class="">8</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">
-              action required Your SAP Fieldglass password has expired. Please
-              correct the value entered in the source configuration and try
-              again. for datasets including "Work Schedule" in connector "SAP
-              Fieldglass" and pipeline "Spend_Analysis_POC"
-            </td>
-            <td class="">Waiting on Customer</td>
-            <td class="">May 08</td>
-          </tr>
-          <tr class="">
-            <td class="">9</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">May 01, 11:42</td>
-            <td class="">
-              action required Your SAP Fieldglass password has expired. Please
-              correct the value entered in the source configuration and try
-              again. for datasets including "Work Cost Center Allocation" in
-              connector "SAP Fieldglass" and pipeline "Spend_Analysis_POC"
-            </td>
-            <td class="">Waiting on Customer</td>
-            <td class="">May 08</td>
-          </tr>
-        </table>
+      <div class="Container">
+        <h1 class="header-search">Outstanding Issues</h1>
       </div>
+
+      <table class="">
+        <!-- <colgroup style="width: 100%" class="">
+          <col class="" />
+          <col class="" />
+          <col class="" />
+          <col class="" />
+          <col class="" />
+          <col class="" />
+        </colgroup> -->
+        <tr class="">
+          <th class="">Priority</th>
+          <th class="">Reported</th>
+          <th class="">Updated</th>
+          <th class="">Description</th>
+          <th class="">Status</th>
+          <th class="">Estimated time of resolution</th>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">1</td>
+          <td class="">Feb 10, 6:00</td>
+          <td class="">Feb 11, 6:50</td>
+          <td class="">
+            long running load for datasets including
+            "template/tax_accumulationSet/tax_accumulationSet" in connector "SAP
+            SuccessFactors Payroll" and pipeline "OGE_SF_PROD"
+          </td>
+          <td class="">Ongoing</td>
+          <td class="">Feb 18</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">2</td>
+          <td class="">Apr 30, 8:04</td>
+          <td class="">May 01, 1:12</td>
+          <td class="">
+            dataset requires processing for datasets including
+            "Payroll_ResultsSet" in connector "SAP SuccessFactors Payroll" and
+            pipeline "OGE_SF_PROD_AZURE"
+          </td>
+          <td class="">Ongoing</td>
+          <td class="">May 08</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">3</td>
+          <td class="">May 01, 3:05</td>
+          <td class="">May 01, 3:39</td>
+          <td class="">
+            dataset requires processing for datasets including
+            "BusinessPartnerCollection" in connector "SAP Cloud For Customer"
+            and pipeline "OGE_C4C_PROD_AZURE"
+          </td>
+          <td class="">Waiting on Customer</td>
+          <td class="">Up to you customer</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">4</td>
+          <td class="">Feb 12, 7:01</td>
+          <td class="">Feb 12, 7:35</td>
+          <td class="">
+            action required for datasets including "Shift" in connector
+            "WorkForce" and pipeline "OGE_WFS_PROD"
+          </td>
+          <td class="">Resolved</td>
+          <td class="">Feb 12, resolved</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">5</td>
+          <td class="">May 02, 2:20</td>
+          <td class="">May 02, 2:20</td>
+          <td class="">
+            dataset requires processing for datasets including "Appointment" in
+            connector "Bullhorn" and pipeline "Recruitment"
+          </td>
+          <td class="">Ongoing</td>
+          <td class="">May 09</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">6</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">
+            action required Your SAP Fieldglass password has expired. Please
+            correct the value entered in the source configuration and try again.
+            for datasets including "Work Order Edit History" in connector "SAP
+            Fieldglass" and pipeline "Spend_Analysis_POC"
+          </td>
+          <td class="">Waiting on Customer</td>
+          <td class="">May 08</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">7</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">
+            action required Your SAP Fieldglass password has expired. Please
+            correct the value entered in the source configuration and try again.
+            for datasets including "Work Order Revision" in connector "SAP
+            Fieldglass" and pipeline "Spend_Analysis_POC"
+          </td>
+          <td class="">Waiting on Customer</td>
+          <td class="">May 08</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">8</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">
+            action required Your SAP Fieldglass password has expired. Please
+            correct the value entered in the source configuration and try again.
+            for datasets including "Work Schedule" in connector "SAP Fieldglass"
+            and pipeline "Spend_Analysis_POC"
+          </td>
+          <td class="">Waiting on Customer</td>
+          <td class="">May 08</td>
+        </tr>
+        <tr
+          class=""
+          draggable="true"
+          ondragstart="start()"
+          ondragover="dragover()"
+        >
+          <td class="">9</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">May 01, 11:42</td>
+          <td class="">
+            action required Your SAP Fieldglass password has expired. Please
+            correct the value entered in the source configuration and try again.
+            for datasets including "Work Cost Center Allocation" in connector
+            "SAP Fieldglass" and pipeline "Spend_Analysis_POC"
+          </td>
+          <td class="">Waiting on Customer</td>
+          <td class="">May 08</td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
